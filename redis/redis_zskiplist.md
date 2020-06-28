@@ -5,7 +5,7 @@
 ## 基本特点
 - 用来存放有序集合（zset），插入删除复杂度为O(log(N))
 - 集合元素不能重复，但分值score可以重复
-- 最高level是64，旧版本是32（ZSKIPLIST_MAXLEVEL）
+- 最高32（ZSKIPLIST_MAXLEVEL）
 
 ## 数据结构
 ```c
@@ -112,7 +112,7 @@ zskiplistNode *zslInsert(zskiplist *zsl, double score, sds ele) {
         rank[i] = i == (zsl->level-1) ? 0 : rank[i+1];
         // 指向的下一个节点不为空
         while (x->level[i].forward &&
-        // 下一个节点score小于带插入score
+        // 下一个节点score小于待插入score
                 (x->level[i].forward->score < score ||
                 // score相同，但是sds比当前小
                     (x->level[i].forward->score == score &&

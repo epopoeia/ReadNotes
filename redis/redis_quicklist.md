@@ -149,3 +149,4 @@ quicklistIter *quicklistGetIterator(const quicklist *quicklist, int direction);
 - quicklist 的头节点和尾节点在任何时候都不会被压缩，因此可以保证将数据插入列表的头或者尾是高效的。
 - 插入一个数据到压缩的节点时，需要先对节点的 ziplist 整个进行解压，插入后再次进行压缩，所以默认采用不压缩速度会比较快
 - 对中间已满节点进行插入是会导致分裂，分裂点即为插入点，分裂完成后插入的数据成为当前节点的尾部，其他的产生新节点，并进行合并减少碎片。
+- 迭代器可以调用quicklistNext对quicklist进行迭代，迭代过程中不能进行插入但是可以使用quicklistDelEntry删除元素。
