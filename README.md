@@ -3,7 +3,11 @@
     仅为个人学习笔记存档，非博客
 
 ## 目录
+- [Golang](./golang-note/README.md)
 - [redis](#redis)
+- [OS](#OS)
+- [network](#network)
+- [dataBase](#database)
 - [杂项](#malloc)
 
 ## redis
@@ -47,6 +51,13 @@
 - [redis集群模式](./redis/redis_cluster.md)
 - [redis备份](./redis/redis_replication.md)
 - [redis哨兵](./redis/redis_sentinel.md)
+
+
+## OS
+
+## network
+
+## database
 
 
 ### 杂项
